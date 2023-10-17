@@ -8,61 +8,94 @@ function getComputerChoice() {
 
 function playRound(playerSelection,computerSelection) {
   if (playerSelection === computerSelection) {
-    return "It's a tie! You both picked " + playerSelection + "!"
+    alert("It's a tie! You both picked " + playerSelection + "!")
   }
   else if (playerSelection === "rock") {
     if (computerSelection === "paper") {
         computerScore++;
-        return "You lose! Paper beats Rock!"
+        alert("You lose! Paper beats Rock!")
     }
     else {
         humanScore++;
-        return "You win! Rock beats Scissors!"
+        alert("You win! Rock beats Scissors!")
     }
   }
   else if (playerSelection === "paper") {
     if (computerSelection === "scissors") {
         computerScore++;
-        return "You lose! Scissors beats Paper!"
+        alert("You lose! Scissors beats Paper!") 
     }
     else {
         humanScore++;
-        return "You win! Paper beats Rock!"
+        alert("You win! Paper beats Rock!") 
     }
   }
   else if (playerSelection === "scissors") {
     if (computerSelection === "rock") {
         computerScore++;
-        return "You lose! Rock beats Scissors!"
+        alert("You lose! Rock beats Scissors!") 
     }
     else {
         humanScore++;
-        return "You win! Scissors beats Paper!"
+        alert("You win! Scissors beats Paper!") 
     }
   }
 }
 
+const rock = document.querySelector('#rock');
+    rock.addEventListener('click', () => {
+        let playerSelection = 'rock'
+        let computerSelection = getComputerChoice()
+        playRound(playerSelection,computerSelection)
+        
+        const pScore = document.querySelector('#pScore')
+        pScore.textContent = 'Player Score: ' + humanScore;
+        
+        const cScore = document.querySelector('#cScore')
+        cScore.textContent = 'Computer Score: ' + computerScore;
+        game()});
+
+const paper = document.querySelector('#paper');
+    paper.addEventListener('click', () => {
+        let playerSelection = 'paper'
+        let computerSelection = getComputerChoice()
+        playRound(playerSelection,computerSelection)
+
+        const pScore = document.querySelector('#pScore')
+        pScore.textContent = 'Player Score: ' + humanScore;
+        
+        const cScore = document.querySelector('#cScore')
+        cScore.textContent = 'Computer Score: ' + computerScore;
+        game()});
+
+const scissors = document.querySelector('#scissors');
+    scissors.addEventListener('click', () => {
+        let playerSelection = 'scissors'
+        let computerSelection = getComputerChoice()
+        playRound(playerSelection,computerSelection)
+        
+        const pScore = document.querySelector('#pScore')
+        pScore.textContent = 'Player Score: ' + humanScore;
+        
+        const cScore = document.querySelector('#cScore')
+        cScore.textContent = 'Computer Score: ' + computerScore;
+        game()});
+
 function game() {
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Rock, paper or scissors?", "").toLowerCase();
-        let computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection,computerSelection));
-        console.log(humanScore);
-        console.log(computerScore);
-        if (humanScore === 3 || computerScore === 3) {
-            i = 5;
-            console.log("End of game")
-        }
+    if (humanScore === 5) {
+        alert("You win!");
+        humanScore = 0;
+        computerScore = 0;
+
+        pScore.textContent = 'Player Score: ' + humanScore;        
+        cScore.textContent = 'Computer Score: ' + computerScore;
     }
-    if (humanScore === computerScore) {
-        console.log("It's a tie!")
-    }
-    else if (humanScore >> computerScore) {
-        console.log("You win!")
-    }
-    else {
-        console.log("You lose!")
+    if (computerScore === 5) {
+        alert("You lose!");
+        humanScore = 0;
+        computerScore = 0;
+
+        pScore.textContent = 'Player Score: ' + humanScore;        
+        cScore.textContent = 'Computer Score: ' + computerScore;
     }
 }
-
-game()
