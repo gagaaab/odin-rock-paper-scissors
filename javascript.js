@@ -2,12 +2,23 @@ let choices = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
+
+const playerSelected = document.querySelector("#playerSelected")
+
+const computerSelected = document.querySelector("#computerSelected")
+
+
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)]
 }
 
 function playRound(playerSelection,computerSelection) {
-    if (playerSelection === computerSelection) {
+    playerSelected.textContent = playerSelection
+    computerSelected.textContent = computerSelection
+    if (humanScore === 5 || computerScore === 5){
+        message.textContent = "Press play again"
+    }
+  else if (playerSelection === computerSelection) {
     message.textContent = "It's a tie! You both picked " + playerSelection + "!"
   }
   else if (playerSelection === "rock") {
@@ -45,30 +56,36 @@ const pScore = document.querySelector('#pScore')
 const cScore = document.querySelector('#cScore')
 const rock = document.querySelector('#rock');
     rock.addEventListener('click', () => {
+        if (humanScore < 5 && computerScore < 5) {
         let playerSelection = 'rock'
         let computerSelection = getComputerChoice()
         playRound(playerSelection,computerSelection)
         pScore.textContent = 'Player Score: ' + humanScore;
         cScore.textContent = 'Computer Score: ' + computerScore;
-        game()});
+        game()
+        }});
 
 const paper = document.querySelector('#paper');
     paper.addEventListener('click', () => {
+        if (humanScore < 5 && computerScore < 5) {
         let playerSelection = 'paper'
         let computerSelection = getComputerChoice()
         playRound(playerSelection,computerSelection)
         pScore.textContent = 'Player Score: ' + humanScore;
         cScore.textContent = 'Computer Score: ' + computerScore;
-        game()});
+        game()
+        }});
 
 const scissors = document.querySelector('#scissors');
     scissors.addEventListener('click', () => {
+        if (humanScore < 5 && computerScore < 5) {
         let playerSelection = 'scissors'
         let computerSelection = getComputerChoice()
         playRound(playerSelection,computerSelection)
         pScore.textContent = 'Player Score: ' + humanScore;
         cScore.textContent = 'Computer Score: ' + computerScore;
-        game()});
+        game()
+        }});
 
 const message = document.querySelector('#message')
 
