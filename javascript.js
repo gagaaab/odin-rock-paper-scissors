@@ -60,8 +60,8 @@ const rock = document.querySelector('#rock');
         let playerSelection = 'rock'
         let computerSelection = getComputerChoice()
         playRound(playerSelection,computerSelection)
-        pScore.textContent = 'Player Score: ' + humanScore;
-        cScore.textContent = 'Computer Score: ' + computerScore;
+        pScore.textContent = humanScore;
+        cScore.textContent = computerScore;
         game()
         }});
 
@@ -71,8 +71,8 @@ const paper = document.querySelector('#paper');
         let playerSelection = 'paper'
         let computerSelection = getComputerChoice()
         playRound(playerSelection,computerSelection)
-        pScore.textContent = 'Player Score: ' + humanScore;
-        cScore.textContent = 'Computer Score: ' + computerScore;
+        pScore.textContent = humanScore;
+        cScore.textContent = computerScore;
         game()
         }});
 
@@ -82,12 +82,13 @@ const scissors = document.querySelector('#scissors');
         let playerSelection = 'scissors'
         let computerSelection = getComputerChoice()
         playRound(playerSelection,computerSelection)
-        pScore.textContent = 'Player Score: ' + humanScore;
-        cScore.textContent = 'Computer Score: ' + computerScore;
+        pScore.textContent = humanScore;
+        cScore.textContent = computerScore;
         game()
         }});
 
 const message = document.querySelector('#message')
+const playAgain = document.querySelector('#playAgain')
 
 function game() {
     if (humanScore === 5) {
