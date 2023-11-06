@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="header">Rock Paper Scissors</div>
-    <div id="subheader">Race to 5</div>
+    <header class="gameHeader">
+        <h1>Rock Paper Scissors</h1>
+        <h2>Race to 5</h2>
+    </header>
+    <main class="gameContent">
     <div class="score-container">
         <div class="player-container">
-            <div id="pScore"></div>
+            <span id="pScore">0</span>
             <p>Human</p>
         </div>
         <div class="player-container">
-            <div id="cScore"></div>
+            <span id="cScore">0</span>
             <p>Computer</p>
         </div>
     </div>
@@ -22,15 +28,15 @@
         <div id="playerSelected"></div>
         <div id="computerSelected"></div>
     </div>
-
     <div id="message"></div>
     <div id="playAgain"></div>
     <div class="button-container">
     <button id="rock">Rock</button>
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
-    <div class="footer">Icons Created by Adam Zubin from Noun Project</div>
     </div>
+    </main>
+    <footer class="credits">Icons Created by Adam Zubin from Noun Project</footer>
     <script src="javascript.js"></script>
 </body>
 </html>
