@@ -2,9 +2,7 @@ let choices = ["rock", "paper", "scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
-
 const playerSelected = document.querySelector("#playerSelected")
-
 const computerSelected = document.querySelector("#computerSelected")
 
 
@@ -13,8 +11,31 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection,computerSelection) {
-    playerSelected.textContent = playerSelection
-    computerSelected.textContent = computerSelection
+    if (playerSelection === "rock") {
+        icon = "icons/rock-icon.svg"
+    }
+    if (playerSelection === "paper") {
+        icon = "icons/paper-icon.svg"
+    }
+    if (playerSelection === "scissors") {
+        icon = "icons/scissors-icon.svg"
+    }
+    playerIcon = document.querySelector("#playerIcon")
+    playerIcon.src = icon
+    playerIcon.style.transform = 'rotate(90deg)'
+  
+    if (computerSelection === "rock") {
+        icon = "icons/rock-icon.svg"
+    }
+    if (computerSelection === "paper") {
+        icon = "icons/paper-icon.svg"
+    }
+    if (computerSelection === "scissors") {
+        icon = "icons/scissors-icon.svg"
+    }
+    computerIcon = document.querySelector("#computerIcon")
+    computerIcon.src = icon
+    computerIcon.style.transform = 'rotateX(180deg) rotate(270deg)'
     if (humanScore === 5 || computerScore === 5){
         message.textContent = "Press play again"
     }
