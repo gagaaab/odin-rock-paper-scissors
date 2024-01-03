@@ -113,10 +113,11 @@ const playAgain = document.querySelector('#playAgain')
 
 function game() {
     if (humanScore === 5) {
-        message.textContent = "You win!";
+        message.textContent = "";
+        message.style.height = 0;
         button = document.createElement('button')
         button.id = 'playAgainButton'
-        button.textContent = "Play again"
+        button.textContent = "You win! Click to play again"
         playAgain.appendChild(button)
         button.addEventListener('click', () => {
             window.location.reload()
@@ -124,10 +125,11 @@ function game() {
     }
 
     if (computerScore === 5) {
-        message.textContent = "You lose!";
+        message.textContent = "";
+        message.style.height = 0;
         button = document.createElement('button')
         button.id = 'playAgainButton'
-        button.textContent = "Play again"
+        button.textContent = "You lose! Click to play again"
         playAgain.appendChild(button)
         button.addEventListener('click', () => {
             window.location.reload()
