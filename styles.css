@@ -27,6 +27,11 @@ html {
     border: 0px;
 }
 
+button:hover {
+    background-color: #bdbdbd;
+    scale: 1.03;;
+}
+
 header {
     display: flex;
     flex-direction: column;
