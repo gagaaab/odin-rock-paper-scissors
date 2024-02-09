@@ -117,7 +117,7 @@ function game() {
         message.style.height = 0;
         button = document.createElement('button')
         button.id = 'playAgainButton'
-        button.textContent = "You win! Click to play again"
+        button.textContent = "Yawa kyko do."
         playAgain.appendChild(button)
         button.addEventListener('click', () => {
             window.location.reload()
@@ -129,7 +129,7 @@ function game() {
         message.style.height = 0;
         button = document.createElement('button')
         button.id = 'playAgainButton'
-        button.textContent = "You lose! Click to play again"
+        button.textContent = "Yawa kyko do."
         playAgain.appendChild(button)
         button.addEventListener('click', () => {
             window.location.reload()
